@@ -51,9 +51,7 @@ const theme = createTheme({
                fontFamily: 'Nunito-Regular',
           },
           header: {
-               fontWeight: 'bold',
                fontSize: 24,
-               lineHeight: 32,
                fontFamily: 'Nunito-Bold',
           },
           subheader: {
