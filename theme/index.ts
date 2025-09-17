@@ -6,25 +6,31 @@ const palette = {
      white: '#FFFFFF',
      black: '#1A1A1A',
      gray: '#8F92A1',
-     lightGrey: '#eeeeee'
+     lightGrey: '#eeeeee',
+     grey800: '#1f2937',
+     grey700: '#374151',
+     grey600: '#4b5563',
+     grey500: '#5C5959',
 };
 
 const getDefaultFontSize = () => {
-  if (Platform.OS === 'ios') {
-    return PixelRatio.getFontScale() * 17;
-  }
-  return PixelRatio.getFontScale() * 14;
+     if (Platform.OS === 'ios') {
+          return PixelRatio.getFontScale() * 17;
+     }
+     return PixelRatio.getFontScale() * 14;
 };
 
-const theme = createTheme({
+const baseTheme = createTheme({
      colors: {
+          appWhite: palette.white,
           appGray: palette.gray,
+          appGrey800: palette.grey800,
           appBlack: palette.black,
           mainBackground: palette.white,
           secondaryBackground: palette.lightGrey,
           whiteText: palette.white,
           text: palette.black,
-           textSubdued: palette.gray,
+          textSubdued: palette.gray,
      },
      spacing: {
           xxs: 2,
@@ -63,6 +69,16 @@ const theme = createTheme({
      }
 })
 
+export const darkTheme: Theme = {
+     ...baseTheme,
+     colors: {
+          ...baseTheme.colors,
+          mainBackground: palette.black,
+          secondaryBackground: palette.grey500,
+          text: palette.white
+     },
 
-export type Theme = typeof theme;
-export default theme;
+}
+
+export type Theme = typeof baseTheme;
+export default baseTheme;

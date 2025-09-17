@@ -9,7 +9,7 @@ interface ThemeState {
   setTheme: (theme: ThemeType) => void
 }
 
-export const useThemeStore = create<ThemeState>()(
+export const useAppThemeStore = create<ThemeState>()(
   persist(
     (set) => ({
       theme: 'system',

@@ -1,10 +1,9 @@
-import theme, { Theme } from "@/theme";
-import { ThemeProvider } from '@shopify/restyle';
+import { ThemeProvider } from '@/providers/ThemeProvider';
 import { useFonts } from 'expo-font';
 import { Stack } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback, useEffect, useState } from "react";
-import { Appearance, View } from 'react-native';
+import { View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 
@@ -49,18 +48,16 @@ export default function RootLayout() {
   if (!appIsReady || (!fontsLoaded && !fontError)) {
     return null;
   }
-  const darkTheme: Theme = {
-    ...theme,
-  }
-
-  const colorScheme = Appearance.getColorScheme();
+  
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: '#fff' }} onLayout={onLayoutRootView}>
-        <ThemeProvider theme={colorScheme == 'dark' ? darkTheme : theme}>
+        <ThemeProvider>
+
           <Stack screenOptions={{ headerShown: false }} />
         </ThemeProvider>
+    
       </View>
     </GestureHandlerRootView>
   )
