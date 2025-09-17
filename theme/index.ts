@@ -18,10 +18,13 @@ const getDefaultFontSize = () => {
 
 const theme = createTheme({
      colors: {
+          appGray: palette.gray,
+          appBlack: palette.black,
           mainBackground: palette.white,
           secondaryBackground: palette.lightGrey,
           whiteText: palette.white,
-          text: palette.black
+          text: palette.black,
+           textSubdued: palette.gray,
      },
      spacing: {
           xxs: 2,
