@@ -5,7 +5,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback, useEffect, useState } from "react";
 import { View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
+import { Toaster } from 'sonner-native';
 
 export default function RootLayout() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -55,8 +55,8 @@ export default function RootLayout() {
       <View style={{ flex: 1, backgroundColor: '#fff' }} onLayout={onLayoutRootView}>
         <ThemeProvider>
           <Stack screenOptions={{ headerShown: false }} />
+          <Toaster />
         </ThemeProvider>
-    
       </View>
     </GestureHandlerRootView>
   )
