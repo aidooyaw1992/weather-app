@@ -1,50 +1,131 @@
-# Welcome to your Expo app 👋
+# Weather App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A beautiful, modern weather application built with React Native and Expo, featuring real-time weather data and an intuitive user interface.
 
-## Get started
+## Screenshots
 
-1. Install dependencies
+<div align="center">
+  
+### 🌙 Dark Theme
+<img src="./screenshots/dark-mode.png" width="300" alt="Dark Mode"/>
 
-   ```bash
-   npm install
-   ```
+*Dark theme optimized for low-light viewing*
 
-2. Start the app
+### ☀️ Light Theme  
+<img src="./screenshots/light-mode.png" width="300" alt="Light Mode"/>
 
-   ```bash
-   npx expo start
-   ```
+*Light theme for bright environments*
 
-In the output, you'll find options to open the app in a
+</div>
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Features
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Real-time Weather Data**: Current weather conditions and 7-day forecast
+- **Theme Support**: Dark and light themes with system preference detection
+- **Location-based**: Automatic location detection or manual location selection
+- **Clean UI**: Modern, intuitive interface with smooth animations
+- **Cross-platform**: Runs on both iOS and Android
 
-## Get a fresh project
+## Tech Stack
 
-When you're ready, run:
+- **React Native** with Expo
+- **TypeScript** for type safety
+- **Zustand** for state management with persistence
+- **Shopify Restyle** for consistent theming
+- **Bottom Sheet** for interactive UI components
+- **React Native Reanimated** for smooth animations
 
+## Installation
+
+1. Clone the repository:
 ```bash
-npm run reset-project
+git clone https://github.com/aidooyaw1992/weather-app.git
+cd weather-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
 
-## Learn more
+3. Start the development server:
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Run on your device:
+   - Scan the QR code with Expo Go app (Android/iOS)
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Configuration
 
-## Join the community
+### Weather API
+1. Get an API key from [OpenWeatherMap](https://openweathermap.org/api)
+2. Create a `.env` file in the root directory:
+```env
+EXPO_PUBLIC_WEATHER_API_KEY=your_api_key_here
+```
 
-Join our community of developers creating universal apps.
+### Predefined Locations
+The app includes several predefined locations:
+- Accra, Ghana
+- New York, United States
+- London, United Kingdom
+- Khartoum, Sudan
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+├── app/            # Screen components
+├── store/              # Zustand store configuration
+├── services/           # API and location services
+├── theme/              # Theme configuration
+└── types/              # TypeScript type definitions
+```
+
+## Key Components
+
+- **CurrentWeatherIcon**: Dynamic weather icons based on conditions
+- **WeatherListItem**: Daily forecast items
+- **StyledRadioGroup**: Theme selection component
+- **LocationService**: GPS and permission handling
+
+## Development Notes
+
+### AI Usage Disclosure
+This project was developed with assistance from Claude AI, which helped with:
+- Code architecture and best practices
+- TypeScript type definitions
+- State management patterns
+- UI component design
+- Error handling strategies
+
+The AI provided guidance and code suggestions, but all final implementation decisions and code review were done by the developer.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Make your changes and commit: `git commit -m 'Add feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Weather data provided by [OpenWeatherMap](https://openweathermap.org/)
+- Icons from [Expo Vector Icons](https://docs.expo.dev/guides/icons/)
+- UI components inspired by modern weather apps
+- Built with assistance from Claude AI
+
+---
+
+Made with ❤️ and React Native

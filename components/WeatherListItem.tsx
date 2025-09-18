@@ -1,13 +1,16 @@
 import { DailyWeather } from '@/types';
-import { Image, StyleSheet } from 'react-native';
+import { Image } from 'expo-image';
+import { StyleSheet } from 'react-native';
 import { Box } from "./Box";
 import { StyledText } from './StyledText';
-
 interface Props {
     listItem: DailyWeather
 }
 
 const WeatherListItem: React.FC<Props> = ({ listItem }) => {
+
+    const blurhash =
+  '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 
     const tempCelsius = Math.round(listItem.temp.max);
 
@@ -29,7 +32,11 @@ const WeatherListItem: React.FC<Props> = ({ listItem }) => {
                 <StyledText color='textSubdued' fontSize={14} >{tempMinCelsius}°</StyledText>
             </Box>
             <Box width={50} height={50} alignItems='center' justifyContent='center'>
-                <Image style={styles.weatherIcon} source={{ uri: imageUrl }} />
+                <Image 
+                placeholder={{ blurhash }}
+                 transition={1000}
+                 contentFit='contain'
+                style={styles.weatherIcon} source={{ uri: imageUrl }} />
             </Box>
             <StyledText flex={1} marginLeft='m' textTransform="capitalize" numberOfLines={1} fontSize={14}>{description}</StyledText>
         </Box>
@@ -45,6 +52,6 @@ const styles = StyleSheet.create({
     weatherIcon: {
         width: 50,
         height: 50,
-        resizeMode: 'contain',
+       
     }
 })

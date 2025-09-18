@@ -35,6 +35,18 @@ export default function Index() {
     bottomSheetRef.current?.snapToIndex(0);
   }, []);
 
+  const formatTimestamp = (timestamp: number| null |undefined) => {
+    if(!timestamp)return ''
+  const date = new Date(timestamp);
+  
+  return date.toLocaleDateString('en-US', {
+    weekday: 'long',
+    hour: 'numeric',
+    hour12: true,
+    timeZone: 'UTC' // or your preferred timezone
+  });
+};
+
   const formatWeatherDateTime = (weatherData: any) => {
     if (!weatherData?.current?.dt) return 'Loading...';
     const date = new Date(weatherData.current.dt * 1000);
@@ -71,7 +83,7 @@ export default function Index() {
 
   const tempCelsius = (kelvin: any) => Math.round(kelvin);
 
-  const { weatherData, isLoading, error, fetchWeatherData, refreshWeatherData, setLocation: setStoreLocation } = useWeatherStore();
+  const { weatherData, isLoading, error, fetchWeatherData, refreshWeatherData, lastUpdated, setLocation: setStoreLocation } = useWeatherStore();
 
   type LocationKey = 'accra' | 'new-york' | 'london' | 'khartoum'
 
@@ -230,6 +242,7 @@ export default function Index() {
     );
   }
 
+  
   // Success State - Your existing content
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.mainBackground }}>
@@ -249,7 +262,6 @@ export default function Index() {
             </StyledText>
           </Box>
           <Box flexDirection="row" gap="s">
-
             <Pressable onPress={handleThemeSelect}>
               <Feather name={colorScheme == 'dark' ? 'moon' : 'sun'} size={28} color={theme.colors.appGray} />
             </Pressable>
@@ -260,6 +272,7 @@ export default function Index() {
         </Box>
 
         <Box alignItems="center" justifyContent="center">
+          
           <CurrentWeatherIcon weatherId={weatherData?.current.weather[0].id} />
           <StyledText textAlign="center" variant="header" fontSize={64}>
             {tempCelsius(weatherData?.current.temp)}°
@@ -267,6 +280,13 @@ export default function Index() {
           <StyledText color="textSubdued" fontFamily="Nunito-SemiBold" fontSize={24}>
             {weatherData?.current.weather[0].description}
           </StyledText>
+
+          <Pressable onPress={refreshWeatherData} style={{marginTop: 16}}>
+            <Box flexDirection="row" justifyContent="flex-end" width={'100%'} alignItems="center" gap="s">
+            <StyledText textAlign="right" color="textSubdued">Last Updated: {formatTimestamp(lastUpdated)}</StyledText>
+              <Feather name="refresh-ccw" color={theme.colors.appGray}/>
+            </Box>
+          </Pressable>
         </Box>
 
         <Box flex={1} backgroundColor="secondaryBackground" borderRadius="m" marginTop="m" padding="m" gap="s">
