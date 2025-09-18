@@ -53,7 +53,7 @@ const baseTheme = createTheme({
      textVariants: {
           defaults: {
                color: 'text',
-               fontSize: getDefaultFontSize(),
+               fontSize: 14,
                fontFamily: 'Nunito-Regular',
           },
           header: {
