@@ -54,7 +54,6 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View style={{ flex: 1, backgroundColor: '#fff' }} onLayout={onLayoutRootView}>
         <ThemeProvider>
-
           <Stack screenOptions={{ headerShown: false }} />
         </ThemeProvider>
     
