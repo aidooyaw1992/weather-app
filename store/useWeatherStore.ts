@@ -9,7 +9,7 @@ type WeatherState = {
     location: LocationResult | null;
     isLoading: boolean;
     isLocationLoading: boolean;
-    hasLocationPermission: boolean;
+   
     error: string | null;
     lastUpdated: number | null;
 }
@@ -31,7 +31,7 @@ const initialState: WeatherState = {
     location: null,
     isLoading: false,
     isLocationLoading: false,
-    hasLocationPermission: false,
+  
     error: null,
     lastUpdated: null,
 };
