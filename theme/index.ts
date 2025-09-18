@@ -1,5 +1,4 @@
 import { createTheme } from '@shopify/restyle';
-import { PixelRatio, Platform } from 'react-native';
 
 
 const palette = {
@@ -13,12 +12,7 @@ const palette = {
      grey500: '#5C5959',
 };
 
-const getDefaultFontSize = () => {
-     if (Platform.OS === 'ios') {
-          return PixelRatio.getFontScale() * 17;
-     }
-     return PixelRatio.getFontScale() * 14;
-};
+
 
 const baseTheme = createTheme({
      colors: {
