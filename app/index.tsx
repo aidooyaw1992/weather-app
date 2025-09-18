@@ -4,14 +4,17 @@ import StyledRadioGroup from "@/components/StyledRadioGroup";
 import { StyledText } from "@/components/StyledText";
 import WeatherListItem from "@/components/WeatherListItem";
 import { useAppTheme } from "@/providers/ThemeProvider";
+import { locationService } from "@/services/LocationService";
 import { useWeatherStore } from "@/store/useWeatherStore";
 import { Theme } from "@/theme";
+import { LocationResult } from "@/types";
 import Feather from '@expo/vector-icons/Feather';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 import { useTheme } from "@shopify/restyle";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { ActivityIndicator, FlatList, Pressable, StatusBar, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { toast } from "sonner-native";
 
 export default function Index() {
 
@@ -54,11 +57,25 @@ export default function Index() {
     });
   };
 
-  const kelvinToCelsius = (kelvin: any) => Math.round(kelvin - 273.15);
+  const isValidLocationResult = (location: any): location is LocationResult => {
+    return (
+      location &&
+      typeof location === 'object' &&
+      location.coords &&
+      typeof location.coords.latitude === 'number' &&
+      typeof location.coords.longitude === 'number' &&
+      typeof location.city === 'string' &&
+      typeof location.country === 'string'
+    );
+  };
 
-  const { weatherData, isLoading, error, fetchWeatherData, refreshWeatherData, hasLocationPermission } = useWeatherStore();
+  const tempCelsius = (kelvin: any) => Math.round(kelvin);
 
-  const predefinedLocations = {
+  const { weatherData, isLoading, error, fetchWeatherData, refreshWeatherData, setLocation: setStoreLocation } = useWeatherStore();
+
+  type LocationKey = 'accra' | 'new-york' | 'london' | 'khartoum'
+
+  const predefinedLocations: { [K in LocationKey]: LocationResult } = {
     'accra': {
       coords: {
         latitude: 5.6431,
@@ -95,8 +112,62 @@ export default function Index() {
 
   const [location, setLocation] = useState(predefinedLocations['accra'])
 
-  const handleSetCurrentLocation =() =>{
+  const handleSetCurrentLocation = () => {
     bottomSheetRef.current?.close();
+    locationService.hasLocationPermission().then((hasPermission) => {
+      if (hasPermission) {
+        locationService.getCurrentLocation().then((value) => {
+
+          if (isValidLocationResult(value)) {
+            setLocation(value)
+            setStoreLocation(value)
+            fetchWeatherData(value.coords.latitude, value.coords.longitude).then(() => {
+              toast.success('retrieved successfully', {
+                position: 'bottom-center'
+              })
+            })
+
+          }
+        })
+          .catch(err => {
+            console.log(err);
+            toast.error('Failed to get current location');
+          })
+      } else {
+        toast.info('no permission available, requesting..')
+        locationService.requestPermissions().then(permission => {
+          if (permission.granted) {
+
+            locationService.getCurrentLocation().then((value) => {
+
+              if (isValidLocationResult(value)) {
+                setLocation(value)
+                setStoreLocation(value)
+                fetchWeatherData(value.coords.latitude, value.coords.longitude).then(() => {
+                  toast.success('retrieved successfully', {
+                    position: 'bottom-center'
+                  })
+                })
+
+              }
+            })
+              .catch(err => {
+                console.log(err);
+                toast.error('Failed to get current location');
+              })
+          }
+        })
+          .catch(e => {
+            toast.error('Failed to request permission', {
+              position: 'bottom-center'
+            });
+            console.log('err req perm', e);
+          })
+      }
+
+    })
+
+
   }
 
   const handleRetry = useCallback(() => {
@@ -105,11 +176,12 @@ export default function Index() {
 
 
   const handlePredefinedLocationSelected = (id: string) => {
-    setLocation(predefinedLocations[id])
+    setLocation(predefinedLocations[id as LocationKey])
     bottomSheetRef.current?.close();
   }
 
   useEffect(() => {
+
     fetchWeatherData(location.coords.latitude, location.coords.longitude)
   }, [location.coords.latitude, location.coords.longitude,]);
 
@@ -162,14 +234,14 @@ export default function Index() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.mainBackground }}>
       <StatusBar barStyle={colorScheme == 'light' ? 'dark-content' : 'default'} />
-      
+
       <Box flex={1} marginHorizontal="m" marginTop="m" backgroundColor="mainBackground">
         <Box flexDirection="row" justifyContent="space-between" alignItems="flex-start">
-          <Box style={{position:'relative'}}>
-            <StyledText variant="header" fontSize={26}>
+          <Box style={{ position: 'relative' }}>
+            <StyledText variant="header" fontSize={24}>
               {`${location.city}, ${location.country}`}
             </StyledText>
-            <StyledText color="textSubdued" fontSize={20}>
+            <StyledText color="textSubdued" fontSize={18}>
               {weatherData?.timezone ?
                 formatCurrentDateTime(weatherData.timezone) :
                 formatWeatherDateTime(weatherData)
@@ -179,7 +251,7 @@ export default function Index() {
           <Box flexDirection="row" gap="s">
 
             <Pressable onPress={handleThemeSelect}>
-              <Feather name={colorScheme =='dark'?'moon':'sun'} size={28} color={theme.colors.appGray} />
+              <Feather name={colorScheme == 'dark' ? 'moon' : 'sun'} size={28} color={theme.colors.appGray} />
             </Pressable>
             <Pressable onPress={handleMenuPress}>
               <Feather name="menu" size={28} color={theme.colors.appGray} />
@@ -190,7 +262,7 @@ export default function Index() {
         <Box alignItems="center" justifyContent="center">
           <CurrentWeatherIcon weatherId={weatherData?.current.weather[0].id} />
           <StyledText textAlign="center" variant="header" fontSize={64}>
-            {kelvinToCelsius(weatherData?.current.temp)}°
+            {tempCelsius(weatherData?.current.temp)}°
           </StyledText>
           <StyledText color="textSubdued" fontFamily="Nunito-SemiBold" fontSize={24}>
             {weatherData?.current.weather[0].description}
@@ -257,7 +329,7 @@ const styles = StyleSheet.create({
 
   currentLocationBtn: {
     backgroundColor: 'blue',
-    width:'100%',
+    width: '100%',
     padding: 16,
     borderRadius: 15,
     marginBottom: 16

@@ -13,70 +13,29 @@ class WeatherService {
             "timezone": "Africa/Accra",
             "timezone_offset": 0,
             "current": {
-                "dt": 1758135266,
-                "sunrise": 1758088281,
-                "sunset": 1758131986,
-                "temp": 298.24,
-                "feels_like": 299.1,
+                "dt": 1758195465,
+                "sunrise": 1758174668,
+                "sunset": 1758218354,
+                "temp": 27.09,
+                "feels_like": 29.74,
                 "pressure": 1013,
-                "humidity": 88,
-                "dew_point": 296.11,
-                "uvi": 0,
-                "clouds": 20,
+                "humidity": 78,
+                "dew_point": 22.92,
+                "uvi": 9.17,
+                "clouds": 75,
                 "visibility": 10000,
                 "wind_speed": 5.14,
                 "wind_deg": 210,
                 "weather": [
                     {
-                        "id": 801,
+                        "id": 803,
                         "main": "Clouds",
-                        "description": "few clouds",
-                        "icon": "02n"
+                        "description": "broken clouds",
+                        "icon": "04d"
                     }
                 ]
             },
             "daily": [
-                {
-                    "dt": 1758106800,
-                    "sunrise": 1758088281,
-                    "sunset": 1758131986,
-                    "moonrise": 1758075060,
-                    "moonset": 1758121020,
-                    "moon_phase": 0.86,
-                    "summary": "Expect a day of partly cloudy with rain",
-                    "temp": {
-                        "day": 301.09,
-                        "min": 296.58,
-                        "max": 301.29,
-                        "night": 297.56,
-                        "eve": 298.76,
-                        "morn": 296.8
-                    },
-                    "feels_like": {
-                        "day": 303.7,
-                        "night": 298.33,
-                        "eve": 299.52,
-                        "morn": 297.62
-                    },
-                    "pressure": 1014,
-                    "humidity": 70,
-                    "dew_point": 294.82,
-                    "wind_speed": 5.29,
-                    "wind_deg": 194,
-                    "wind_gust": 5.58,
-                    "weather": [
-                        {
-                            "id": 500,
-                            "main": "Rain",
-                            "description": "light rain",
-                            "icon": "10d"
-                        }
-                    ],
-                    "clouds": 89,
-                    "pop": 0.8,
-                    "rain": 1.42,
-                    "uvi": 11.17
-                },
                 {
                     "dt": 1758193200,
                     "sunrise": 1758174668,
@@ -86,25 +45,25 @@ class WeatherService {
                     "moon_phase": 0.89,
                     "summary": "Expect a day of partly cloudy with rain",
                     "temp": {
-                        "day": 299.74,
-                        "min": 296.81,
-                        "max": 301.92,
-                        "night": 296.98,
-                        "eve": 299.56,
-                        "morn": 296.98
+                        "day": 27.36,
+                        "min": 23.17,
+                        "max": 27.56,
+                        "night": 24.28,
+                        "eve": 27.1,
+                        "morn": 23.26
                     },
                     "feels_like": {
-                        "day": 299.74,
-                        "night": 297.74,
-                        "eve": 299.56,
-                        "morn": 297.72
+                        "day": 30,
+                        "night": 24.98,
+                        "eve": 29.03,
+                        "morn": 24.04
                     },
-                    "pressure": 1014,
-                    "humidity": 72,
-                    "dew_point": 294.16,
-                    "wind_speed": 5.07,
-                    "wind_deg": 212,
-                    "wind_gust": 7.64,
+                    "pressure": 1013,
+                    "humidity": 75,
+                    "dew_point": 22.54,
+                    "wind_speed": 5.04,
+                    "wind_deg": 216,
+                    "wind_gust": 6.58,
                     "weather": [
                         {
                             "id": 500,
@@ -113,9 +72,9 @@ class WeatherService {
                             "icon": "10d"
                         }
                     ],
-                    "clouds": 90,
-                    "pop": 0.53,
-                    "rain": 1.08,
+                    "clouds": 78,
+                    "pop": 0.67,
+                    "rain": 1.92,
                     "uvi": 10.61
                 },
                 {
@@ -127,36 +86,36 @@ class WeatherService {
                     "moon_phase": 0.92,
                     "summary": "Expect a day of partly cloudy with rain",
                     "temp": {
-                        "day": 299.14,
-                        "min": 296.01,
-                        "max": 300.2,
-                        "night": 297.25,
-                        "eve": 298.47,
-                        "morn": 296.12
+                        "day": 27.43,
+                        "min": 23.13,
+                        "max": 28.33,
+                        "night": 23.89,
+                        "eve": 26.54,
+                        "morn": 23.26
                     },
                     "feels_like": {
-                        "day": 299.14,
-                        "night": 297.99,
-                        "eve": 299.17,
-                        "morn": 296.9
+                        "day": 29.6,
+                        "night": 24.66,
+                        "eve": 26.54,
+                        "morn": 23.97
                     },
-                    "pressure": 1014,
-                    "humidity": 77,
-                    "dew_point": 294.7,
-                    "wind_speed": 5.58,
-                    "wind_deg": 231,
-                    "wind_gust": 8.2,
+                    "pressure": 1015,
+                    "humidity": 70,
+                    "dew_point": 21.17,
+                    "wind_speed": 5.74,
+                    "wind_deg": 223,
+                    "wind_gust": 8.36,
                     "weather": [
                         {
-                            "id": 501,
+                            "id": 500,
                             "main": "Rain",
-                            "description": "moderate rain",
+                            "description": "light rain",
                             "icon": "10d"
                         }
                     ],
-                    "clouds": 100,
-                    "pop": 0.63,
-                    "rain": 3.26,
+                    "clouds": 98,
+                    "pop": 0.5,
+                    "rain": 2.38,
                     "uvi": 3.75
                 },
                 {
@@ -166,38 +125,37 @@ class WeatherService {
                     "moonrise": 1758343380,
                     "moonset": 1758388200,
                     "moon_phase": 0.96,
-                    "summary": "You can expect partly cloudy in the morning, with rain in the afternoon",
+                    "summary": "There will be partly cloudy today",
                     "temp": {
-                        "day": 301.55,
-                        "min": 296.36,
-                        "max": 301.55,
-                        "night": 296.95,
-                        "eve": 297.97,
-                        "morn": 296.66
+                        "day": 26.96,
+                        "min": 23.53,
+                        "max": 28.71,
+                        "night": 24.17,
+                        "eve": 26.57,
+                        "morn": 23.66
                     },
                     "feels_like": {
-                        "day": 304.02,
-                        "night": 297.76,
-                        "eve": 298.67,
-                        "morn": 297.39
+                        "day": 28.87,
+                        "night": 24.89,
+                        "eve": 26.57,
+                        "morn": 24.33
                     },
                     "pressure": 1015,
-                    "humidity": 66,
-                    "dew_point": 294.32,
-                    "wind_speed": 4.96,
-                    "wind_deg": 213,
-                    "wind_gust": 6.69,
+                    "humidity": 71,
+                    "dew_point": 20.99,
+                    "wind_speed": 5.83,
+                    "wind_deg": 217,
+                    "wind_gust": 7.14,
                     "weather": [
                         {
-                            "id": 500,
-                            "main": "Rain",
-                            "description": "light rain",
-                            "icon": "10d"
+                            "id": 804,
+                            "main": "Clouds",
+                            "description": "overcast clouds",
+                            "icon": "04d"
                         }
                     ],
-                    "clouds": 95,
-                    "pop": 0.59,
-                    "rain": 3.09,
+                    "clouds": 96,
+                    "pop": 0.42,
                     "uvi": 7.49
                 },
                 {
@@ -207,37 +165,38 @@ class WeatherService {
                     "moonrise": 1758432480,
                     "moonset": 1758476880,
                     "moon_phase": 0,
-                    "summary": "There will be partly cloudy today",
+                    "summary": "Expect a day of partly cloudy with rain",
                     "temp": {
-                        "day": 298.76,
-                        "min": 295.99,
-                        "max": 298.76,
-                        "night": 297.45,
-                        "eve": 297.71,
-                        "morn": 296.06
+                        "day": 28.06,
+                        "min": 22.82,
+                        "max": 28.66,
+                        "night": 25.01,
+                        "eve": 25.81,
+                        "morn": 22.82
                     },
                     "feels_like": {
-                        "day": 299.39,
-                        "night": 298.21,
-                        "eve": 298.44,
-                        "morn": 296.81
+                        "day": 30.13,
+                        "night": 25.68,
+                        "eve": 26.48,
+                        "morn": 23.48
                     },
-                    "pressure": 1015,
-                    "humidity": 77,
-                    "dew_point": 294.32,
-                    "wind_speed": 4.34,
-                    "wind_deg": 258,
-                    "wind_gust": 7.46,
+                    "pressure": 1014,
+                    "humidity": 65,
+                    "dew_point": 20.59,
+                    "wind_speed": 4.37,
+                    "wind_deg": 205,
+                    "wind_gust": 7.15,
                     "weather": [
                         {
-                            "id": 804,
-                            "main": "Clouds",
-                            "description": "overcast clouds",
-                            "icon": "04d"
+                            "id": 500,
+                            "main": "Rain",
+                            "description": "light rain",
+                            "icon": "10d"
                         }
                     ],
-                    "clouds": 100,
-                    "pop": 0.23,
+                    "clouds": 94,
+                    "pop": 0.4,
+                    "rain": 0.66,
                     "uvi": 8.1
                 },
                 {
@@ -249,25 +208,25 @@ class WeatherService {
                     "moon_phase": 0.02,
                     "summary": "Expect a day of partly cloudy with rain",
                     "temp": {
-                        "day": 301.34,
-                        "min": 296.2,
-                        "max": 301.34,
-                        "night": 297.18,
-                        "eve": 298.14,
-                        "morn": 296.2
+                        "day": 29.03,
+                        "min": 23.39,
+                        "max": 29.03,
+                        "night": 24.31,
+                        "eve": 26.18,
+                        "morn": 23.39
                     },
                     "feels_like": {
-                        "day": 303.64,
-                        "night": 297.88,
-                        "eve": 298.81,
-                        "morn": 296.88
+                        "day": 31.4,
+                        "night": 25.04,
+                        "eve": 26.18,
+                        "morn": 24.06
                     },
                     "pressure": 1014,
-                    "humidity": 66,
-                    "dew_point": 294.08,
-                    "wind_speed": 5.27,
-                    "wind_deg": 228,
-                    "wind_gust": 8.67,
+                    "humidity": 62,
+                    "dew_point": 20.71,
+                    "wind_speed": 5.64,
+                    "wind_deg": 231,
+                    "wind_gust": 9.36,
                     "weather": [
                         {
                             "id": 500,
@@ -276,9 +235,9 @@ class WeatherService {
                             "icon": "10d"
                         }
                     ],
-                    "clouds": 85,
-                    "pop": 0.55,
-                    "rain": 2.44,
+                    "clouds": 87,
+                    "pop": 0.59,
+                    "rain": 2.26,
                     "uvi": 9.04
                 },
                 {
@@ -288,37 +247,38 @@ class WeatherService {
                     "moonrise": 1758610440,
                     "moonset": 1758654300,
                     "moon_phase": 0.05,
-                    "summary": "There will be partly cloudy today",
+                    "summary": "You can expect partly cloudy in the morning, with rain in the afternoon",
                     "temp": {
-                        "day": 302.16,
-                        "min": 295.62,
-                        "max": 302.16,
-                        "night": 297.7,
-                        "eve": 299.1,
-                        "morn": 295.62
+                        "day": 28.5,
+                        "min": 23.14,
+                        "max": 28.5,
+                        "night": 24.12,
+                        "eve": 25.62,
+                        "morn": 23.14
                     },
                     "feels_like": {
-                        "day": 304.68,
-                        "night": 298.46,
-                        "eve": 299.1,
-                        "morn": 296.27
+                        "day": 30.76,
+                        "night": 24.89,
+                        "eve": 26.33,
+                        "morn": 23.73
                     },
                     "pressure": 1014,
-                    "humidity": 63,
-                    "dew_point": 293.95,
-                    "wind_speed": 6.12,
-                    "wind_deg": 219,
-                    "wind_gust": 10,
+                    "humidity": 64,
+                    "dew_point": 20.63,
+                    "wind_speed": 5.1,
+                    "wind_deg": 237,
+                    "wind_gust": 8.88,
                     "weather": [
                         {
-                            "id": 803,
-                            "main": "Clouds",
-                            "description": "broken clouds",
-                            "icon": "04d"
+                            "id": 500,
+                            "main": "Rain",
+                            "description": "light rain",
+                            "icon": "10d"
                         }
                     ],
-                    "clouds": 58,
-                    "pop": 0.2,
+                    "clouds": 91,
+                    "pop": 0.83,
+                    "rain": 3.05,
                     "uvi": 10
                 },
                 {
@@ -328,27 +288,68 @@ class WeatherService {
                     "moonrise": 1758699480,
                     "moonset": 1758743100,
                     "moon_phase": 0.08,
-                    "summary": "Expect a day of partly cloudy with rain",
+                    "summary": "The day will start with partly cloudy through the late morning hours, transitioning to rain",
                     "temp": {
-                        "day": 300.92,
-                        "min": 296.98,
-                        "max": 300.92,
-                        "night": 297.52,
-                        "eve": 298.2,
-                        "morn": 296.98
+                        "day": 27.93,
+                        "min": 23.23,
+                        "max": 27.93,
+                        "night": 24.09,
+                        "eve": 24.49,
+                        "morn": 23.23
                     },
                     "feels_like": {
-                        "day": 303.26,
-                        "night": 298.21,
-                        "eve": 298.9,
-                        "morn": 297.69
+                        "day": 30.15,
+                        "night": 24.83,
+                        "eve": 25.27,
+                        "morn": 23.91
                     },
                     "pressure": 1015,
-                    "humidity": 69,
-                    "dew_point": 294.5,
-                    "wind_speed": 5.86,
-                    "wind_deg": 214,
-                    "wind_gust": 8.06,
+                    "humidity": 67,
+                    "dew_point": 21.02,
+                    "wind_speed": 4.95,
+                    "wind_deg": 248,
+                    "wind_gust": 9.24,
+                    "weather": [
+                        {
+                            "id": 501,
+                            "main": "Rain",
+                            "description": "moderate rain",
+                            "icon": "10d"
+                        }
+                    ],
+                    "clouds": 99,
+                    "pop": 0.92,
+                    "rain": 4.06,
+                    "uvi": 10
+                },
+                {
+                    "dt": 1758798000,
+                    "sunrise": 1758779379,
+                    "sunset": 1758822936,
+                    "moonrise": 1758788580,
+                    "moonset": 1758832020,
+                    "moon_phase": 0.11,
+                    "summary": "Expect a day of partly cloudy with rain",
+                    "temp": {
+                        "day": 28.99,
+                        "min": 22.87,
+                        "max": 28.99,
+                        "night": 24.62,
+                        "eve": 25.66,
+                        "morn": 22.92
+                    },
+                    "feels_like": {
+                        "day": 31.33,
+                        "night": 25.33,
+                        "eve": 26.32,
+                        "morn": 23.62
+                    },
+                    "pressure": 1015,
+                    "humidity": 62,
+                    "dew_point": 20.75,
+                    "wind_speed": 5.5,
+                    "wind_deg": 205,
+                    "wind_gust": 7.38,
                     "weather": [
                         {
                             "id": 500,
@@ -357,19 +358,18 @@ class WeatherService {
                             "icon": "10d"
                         }
                     ],
-                    "clouds": 98,
+                    "clouds": 89,
                     "pop": 0.47,
-                    "rain": 1.21,
+                    "rain": 0.29,
                     "uvi": 10
                 }
             ]
-
         })
-      
-     
+
+
         await delay(1000)
         // throw new Error('something went wrong')
-        
+
 
         const data = getMockWeatherData();
         data.lat = lat;
@@ -384,7 +384,7 @@ class WeatherService {
             throw new Error('Weather API key not found. Please check your environment variables.')
         }
 
-        const url = `${WEATHER_API_BASE_URL}?lat=${lat}&lon=${lon}&appid=${key}&exclude=minutely,hourly,alerts`;
+        const url = `${WEATHER_API_BASE_URL}?lat=${lat}&lon=${lon}&appid=${key}&units=metric&exclude=minutely,hourly,alerts`;
         const response = await fetch(url);
 
         if (!response.ok) {
