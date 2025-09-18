@@ -6,7 +6,7 @@ import { StyleSheet, ViewStyle } from 'react-native';
 
 const WEATHER_ASSETS = {
   sunny: require('../assets/lotties/weather-sunny.json'),
-  cloudy: require('../assets/lotties/weather-cloudy-night.json'),
+  cloudy: require('../assets/lotties/weather-windy.json'),
   rainy: require('../assets/lotties/weather-rainy.json'),
   storm: require('../assets/lotties/weather-storm.json'),
   snow: require('../assets/lotties/weather-snow.json'),
