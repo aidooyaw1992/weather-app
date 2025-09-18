@@ -2,6 +2,8 @@ import { WeatherData } from "@/types";
 
 const WEATHER_API_BASE_URL = 'https://api.openweathermap.org/data/3.0/onecall';
 
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 class WeatherService {
 
     async fetchMockedWeatherData(lat: number, lon: number): Promise<WeatherData> {
@@ -363,7 +365,12 @@ class WeatherService {
             ]
 
         })
-        await new Promise(resolve => setTimeout(resolve, 1000));
+      
+     
+        await delay(1000)
+        // throw new Error('something went wrong')
+        
+
         const data = getMockWeatherData();
         data.lat = lat;
         data.lon = lon;
@@ -383,6 +390,7 @@ class WeatherService {
         if (!response.ok) {
             throw new Error(`Weather API error: ${response.status} ${response.statusText}`);
         }
+        console.log('retrieved data');
 
         const data: WeatherData = await response.json();
         return data
