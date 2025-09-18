@@ -6400,6 +6400,11 @@ slugify@^1.3.4, slugify@^1.6.6:
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.6.tgz#2d4ac0eacb47add6af9e04d3be79319cbcc7924b"
   integrity sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==
 
+sonner-native@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/sonner-native/-/sonner-native-0.21.1.tgz#5fdf71fb273b8d911e967112e68058844191682e"
+  integrity sha512-00RSmfVBd/XfQdRh7sqgFUjftx09HRgEMnZei4CVKcRKeqRcq9DXn5o1nJhz3aA4Cyf5k2+0kK4spdWtAtNqSA==
+
 source-map-js@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
