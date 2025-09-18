@@ -51,8 +51,8 @@ export const useWeatherStore = create<WeatherState & WeatherAction>()(
 
                 try {
 
-                    let data = await weatherService.fetchMockedWeatherData(lat, lon)
-                    // let data = await weatherService.fetchWeatherData(lat, lon)
+                    // let data = await weatherService.fetchMockedWeatherData(lat, lon)
+                    let data = await weatherService.fetchWeatherData(lat, lon)
 
                     set({
                         weatherData: data,
